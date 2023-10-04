@@ -1,3 +1,5 @@
+# for each config copy from: # lispers.net to #----#
+
 # lisp-ms
 
 
