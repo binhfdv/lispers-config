@@ -1,0 +1,36 @@
+#####
+# one machine for lisp-ms
+# one machine for xRT
+#
+#
+#####
+ls /sys/class/net
+# 
+sudo apt-get update -y
+sudo apt-get install -y curl wget
+sudo apt-get install -y \
+     gcc libc-dev python2 python2-dev golang libffi-dev openssl libpcap-dev \
+     iptables iproute2 tcpdump tcsh sudo traceroute iputils-ping \
+     net-tools procps emacs vim jq
+curl https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip.py && \
+    python2 get-pip.py
+
+cd /usr/bin
+sudo ln -sf python2 python
+cd
+
+python -m pip install cheroot bottle netifaces pcapy pcappy pycrypto requests curve25519-donna geopy ecdsa pycryptodome pytun future distro
+
+python lispers.net-test-install.pyo
+
+git clone https://github.com/farinacci/lispers.net.git
+
+cd lispers.net/build/latest # or any release
+sudo tar zxvf <tgz-file>
+sudo vi lisp.config
+
+# paste appropriate txt config file to lisp.config (lisp-ms or xRT)
+
+./RESTART-LISP
+# web ui
+# https://<lisp-ms machine ip>:8080/lisp
