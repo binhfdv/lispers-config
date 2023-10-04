@@ -1,7 +1,7 @@
 #####
-# one machine for lisp-ms
-# one machine for xRT
-#
+# one machine for lisp-ms (192.168.4.107)
+# one machine for xRT (192.168.4.100)
+# 
 #
 #####
 ls /sys/class/net
@@ -29,7 +29,8 @@ cd lispers.net/build/latest # or any release
 sudo tar zxvf <tgz-file>
 sudo vi lisp.config
 
-# paste appropriate txt config file to lisp.config (lisp-ms or xRT)
+# paste appropriate parts from txt config file to lisp.config (lisp-ms or xRT)
+# change ip addrs to your machine ip
 
 ./RESTART-LISP
 # web ui
