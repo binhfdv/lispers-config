@@ -4,7 +4,7 @@
 # 
 #
 #####
-ls /sys/class/net
+ls /sys/class/net # choose a net port to configure the xTR
 # 
 sudo apt-get update -y
 sudo apt-get install -y curl wget
