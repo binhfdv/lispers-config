@@ -66,7 +66,7 @@ lisp enable {
 lisp interface {
     interface-name = test-10
     device = eno2
-    dynamic-eid = 20.20.20.0/24
+    dynamic-eid = 192.168.4.0/24
     dynamic-eid-timeout = 60
 }
 lisp xtr-parameters {
@@ -84,7 +84,7 @@ lisp map-resolver {
 }
 lisp database-mapping {
     prefix {
-        eid-prefix = 20.20.20.0/24
+        eid-prefix = 192.168.4.0/24
     }
     rloc {
         interface = eno2
