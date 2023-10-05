@@ -1,8 +1,8 @@
 #--- py to pyo
+sudo rm -rf *.pyo
 python -O -m compileall ./src/
+mv ./src/*.pyo ./
 ---#
 #--- remove configs
 sudo rm -rf lisp.config
 ---#
-
-
