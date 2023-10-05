@@ -1,6 +1,5 @@
 #--- py to pyo
-import py_compile
-py_compile.compile("./src/lisp-lig.py")
+python -O -m compileall ./src/
 ---#
 
 
