@@ -5,7 +5,7 @@
 
 # lispers.net lisp.config file, last changed: Tue 03 Oct 2023 11:13:45 AM UTC
 #
-# Hostname: nucworker
+# Hostname: ubuntu
 #
 #-----------------------------------------------------------------------------
 lisp enable {
@@ -27,7 +27,7 @@ lisp debug {
 }
 lisp user-account {
     username = root
-    password = lovedcn@123
+    password = 1
     super-user = yes
 }
 lisp site {
@@ -35,7 +35,7 @@ lisp site {
     description = test for external client
     authentication-key = admin
     allowed-prefix {
-        eid-prefix = 192.168.4.0/24
+        eid-prefix = 20.20.20.0/24
     }
 }
 lisp site {
@@ -44,15 +44,17 @@ lisp site {
     authentication-key = admin
     allowed-prefix {
         eid-prefix = 30.30.30.0/24
+    }
 }
 #-----------------------------------------------------------------------------#
+
 
 
 # xTR
 
 # lispers.net lisp.config file, last changed: Tue 03 Oct 2023 11:19:15 AM UTC
 #
-# Hostname: master
+# Hostname: ubuntu
 #
 #-----------------------------------------------------------------------------
 lisp enable {
@@ -63,10 +65,24 @@ lisp enable {
     map-resolver = no
     ddt-node = no
 }
+lisp debug {
+    core = no
+    itr = yes
+    etr = yes
+    rtr = no
+    map-server = no
+    map-resolver = no
+    ddt-node = no
+}
+lisp user-account {
+    username = root
+    password = 1
+    super-user = yes
+}
 lisp interface {
     interface-name = test-10
-    device = eno2
-    dynamic-eid = 192.168.4.0/24
+    device = ens4
+    dynamic-eid = 10.10.10.0/24
     dynamic-eid-timeout = 60
 }
 lisp xtr-parameters {
@@ -80,20 +96,20 @@ lisp xtr-parameters {
 }
 lisp map-resolver {
     mr-name = lisp-ms-test
-    address = 192.168.4.107
+    address = 192.168.40.140
 }
 lisp database-mapping {
     prefix {
-        eid-prefix = 192.168.4.0/24
+        eid-prefix = 10.10.10.0/24
     }
     rloc {
-        interface = eno2
+        interface = ens4
         priority = 1
         weight = 50
     }
 }
 lisp map-server {
-    address = 192.168.4.107
+    address = 192.168.40.140
     authentication-type = sha1
     authentication-key = admin
 }
