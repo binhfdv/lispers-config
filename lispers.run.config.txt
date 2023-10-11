@@ -89,7 +89,7 @@ lisp user-account {
 }
 lisp interface {
     interface-name = test-10
-    device = ens4
+    device = ens3
     dynamic-eid = 10.10.10.0/24
     dynamic-eid-timeout = 60
 }
