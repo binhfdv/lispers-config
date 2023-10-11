@@ -89,7 +89,7 @@ lisp user-account {
 }
 lisp interface {
     interface-name = test-10
-    device = ens3
+    device = ens4
     dynamic-eid = 10.10.10.0/24
     dynamic-eid-timeout = 60
 }
@@ -111,7 +111,7 @@ lisp database-mapping {
         eid-prefix = 10.10.10.0/24
     }
     rloc {
-        interface = ens4
+        interface = ens3
         priority = 1
         weight = 50
     }
