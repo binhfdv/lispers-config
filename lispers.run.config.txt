@@ -46,6 +46,14 @@ lisp site {
         eid-prefix = 30.30.30.0/24
     }
 }
+lisp site {
+    site-name = test-net
+    description = test for registration
+    authentication-key = admin
+    allowed-prefix {
+        eid-prefix = 192.168.40.0/24
+    }
+}
 #-----------------------------------------------------------------------------#
 
 
