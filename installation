@@ -21,13 +21,15 @@ cd
 
 python -m pip install cheroot bottle netifaces pcapy pcappy pycrypto requests curve25519-donna geopy ecdsa pycryptodome pytun future distro
 
-python lispers.net-test-install.pyo
-
 git clone https://github.com/farinacci/lispers.net.git
 
 cd lispers.net/build/latest # or any release
 sudo tar zxvf <tgz-file>
 sudo vi lisp.config
+
+python lispers.net-test-install.pyo
+
+
 
 # paste appropriate parts from txt config file to lisp.config (lisp-ms or xRT)
 # change ip addrs to your machine ip
