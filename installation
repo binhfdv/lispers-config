@@ -1,10 +1,14 @@
 #####
-# one machine for lisp-ms (192.168.4.107)
-# one machine for xRT (192.168.4.100)
-# 
+# install in openstack vms
+#                                                   ----------subnet-------------ip------
+# one vm machine for lisp-mr-ms (virtual IP network:  ens3 192.168.40.0/24 [192.168.40.180], ens4 10.10.10.0/24 [10.10.10.80], ens5 20.20.20.0/24 [20.20.20.224], ens6 30.30.30.0/24 [30.30.30.152])
+# one vm machine for lisp site 1 (virtual IP network: ens3 192.168.40.0/24 [192.168.40.23], ens4 10.10.10.0/24 [10.10.10.159], ens5 20.20.20.0/24 [20.20.20.205])
+# one vm machine for lisp site 2 (virtual IP network: ens3 192.168.40.0/24 [192.168.40.22], ens4 30.30.30.0/24 [30.30.30.98], ens5 20.20.20.0/24 [20.20.20.205])
+#
+
+# configurations for all vms
 #
 #####
-ls /sys/class/net # choose a net port to configure the xTR
 # 
 sudo apt-get update -y
 sudo apt-get install -y curl wget
@@ -25,9 +29,13 @@ git clone https://github.com/farinacci/lispers.net.git
 
 cd lispers.net/build/latest # or any release
 sudo tar zxvf <tgz-file>
-sudo vi lisp.config
 
 python lispers.net-test-install.pyo
+
+
+sudo vi lisp.config
+
+
 
 
 
