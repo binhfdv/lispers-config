@@ -1,7 +1,6 @@
 # for each config copy from: # lispers.net to #----#
 
-# lisp-ms
-
+# lisp-ms vm2
 
 # lispers.net lisp.config file, last changed: Tue 03 Oct 2023 11:13:45 AM UTC
 #
@@ -31,8 +30,16 @@ lisp user-account {
     super-user = yes
 }
 lisp site {
+    site-name = 10-net
+    description = lisp site vm 1
+    authentication-key = admin
+    allowed-prefix {
+        eid-prefix = 10.10.10.0/24
+    }
+}
+lisp site {
     site-name = 20-net
-    description = test for external client
+    description = lisp site vm 2 (ms site)
     authentication-key = admin
     allowed-prefix {
         eid-prefix = 20.20.20.0/24
@@ -40,7 +47,7 @@ lisp site {
 }
 lisp site {
     site-name = 30-net
-    description = test for cluster1
+    description = external client vm 3
     authentication-key = admin
     allowed-prefix {
         eid-prefix = 30.30.30.0/24
@@ -58,7 +65,7 @@ lisp site {
 
 
 
-# xTR
+# xTR vm1
 
 # lispers.net lisp.config file, last changed: Tue 03 Oct 2023 11:19:15 AM UTC
 #
@@ -109,6 +116,73 @@ lisp map-resolver {
 lisp database-mapping {
     prefix {
         eid-prefix = 10.10.10.0/24
+    }
+    rloc {
+        interface = ens3
+        priority = 1
+        weight = 50
+    }
+}
+lisp map-server {
+    address = 192.168.40.140
+    authentication-type = sha1
+    authentication-key = admin
+}
+#-----------------------------------------------------------------------------#
+
+
+
+# xTR vm3
+
+# lispers.net lisp.config file, last changed: Thu Oct 12 03:59:52 UTC 2023
+#
+# Hostname: ubuntu
+#
+#-----------------------------------------------------------------------------
+lisp enable {
+    itr = yes
+    etr = yes
+    rtr = no
+    map-server = no
+    map-resolver = no
+    ddt-node = no
+}
+lisp debug {
+    core = no
+    itr = yes
+    etr = yes
+    rtr = no
+    map-server = no
+    map-resolver = no
+    ddt-node = no
+}
+lisp user-account {
+    username = root
+    password = 3
+    super-user = yes
+}
+lisp interface {
+    interface-name = test-30
+    device = ens4
+    dynamic-eid = 30.30.30.0/24
+    dynamic-eid-timeout = 60
+}
+lisp xtr-parameters {
+    rloc-probing = yes
+    nonce-echoing = no
+    data-plane-security = no
+    data-plane-logging = yes
+    frame-logging = yes
+    flow-logging = yes
+    nat-traversal = no
+}
+lisp map-resolver {
+    mr-name = lisp-ms-test
+    address = 192.168.40.140
+}
+lisp database-mapping {
+    prefix {
+        eid-prefix = 30.30.30.0/24
     }
     rloc {
         interface = ens3
