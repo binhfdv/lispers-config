@@ -178,7 +178,7 @@ lisp xtr-parameters {
 }
 lisp map-resolver {
     mr-name = lisp-ms-test
-    address = 192.168.40.140
+    address = 20.20.20.224
 }
 lisp database-mapping {
     prefix {
@@ -191,7 +191,7 @@ lisp database-mapping {
     }
 }
 lisp map-server {
-    address = 192.168.40.140
+    address = 20.20.20.224
     authentication-type = sha1
     authentication-key = admin
 }
