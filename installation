@@ -27,7 +27,7 @@ python -m pip install cheroot bottle netifaces pcapy pcappy pycrypto requests cu
 
 git clone https://github.com/farinacci/lispers.net.git
 
-cd lispers.net/build/stable # current stable: 0.583 or any release 
+cd lispers.net/build/stable # current stable: 0.593 or any release 
 sudo tar zxvf <tgz-file>
 
 python lispers.net-test-install.pyo
