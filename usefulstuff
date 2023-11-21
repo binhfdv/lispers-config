@@ -6,6 +6,7 @@ mv ./src/*.pyo ./
 
 #--- remove configs
 sudo rm -rf lisp.config
+sudo vi lisp.config
 ---#
 
 #--- internet devices
