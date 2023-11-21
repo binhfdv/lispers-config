@@ -20,20 +20,20 @@ ip a
 #--- config internet device in openstack when the ip is not recognized automatically. [remember] The subnets must be created before creating the instances in openstack.
 sudo vi /etc/netplan/50-cloud-init.yaml
 ------------
-        network:
-            ethernets:
-                ens3:
-                    dhcp4: true
-                    match:
-                        macaddress: fa:16:3e:a3:3d:6e # this mac address is from the command: ip a
-                    set-name: ens3
-                ens4:
-                    dhcp4: true
-                ens5:
-                    dhcp4: true
-                ens6:
-                    dhcp4: true
-            version: 2
+network:
+    ethernets:
+        ens3:
+            dhcp4: true
+            match:
+                macaddress: fa:16:3e:a3:3d:6e # this mac address is from the command: ip a
+            set-name: ens3
+        ens4:
+            dhcp4: true
+        ens5:
+            dhcp4: true
+        ens6:
+            dhcp4: true
+    version: 2
 ------------
 netplan apply
 ---#
